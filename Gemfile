@@ -67,6 +67,7 @@ group :development do
   # gem "spring"
   gem 'capistrano', require: false
   gem 'capistrano-rails', require: false
+  gem 'hotwire-livereload'
 end
 
 group :test do

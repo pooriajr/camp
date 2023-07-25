@@ -1,0 +1,7 @@
+<% if flash.any? %>
+  <div data-controller="flash" class="transition duration-500 fixed top-2 -translate-y-24 w-full flex flex-col justify-center gap-2">
+    <% flash.each do |name, msg| %>
+      <div class="border p-2 bg-white inline-block mx-auto"><span class="dark-emoji">🔔</span> <%= msg %></div>
+    <% end %>
+  </div>
+<% end %>

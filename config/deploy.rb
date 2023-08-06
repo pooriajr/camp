@@ -1,25 +1,11 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.17.1"
 
-set :application, "nobiteclub"
-set :url, "nobite.club"
-set :repo_url, "git@github.com:pooriar/nobiteclub.git"
+set :application, "literail"
+set :url, "literail.com"
+set :repo_url, "git@github.com:pooriar/literail.git"
 
-# Find an open port between start_port and end_port
-def find_open_port(start_port, end_port)
-  start_port.upto(end_port) do |port|
-    begin
-      server = TCPServer.new('localhost', port)
-      server.close
-      return port
-    rescue Errno::EADDRINUSE
-      next
-    end
-  end
-  raise "No open ports found between #{start_port} and #{end_port}"
-end
-
-set :application_port, find_open_port(3000, 3100)
+set :application_port, 3000
 
 set :branch, "main"
 

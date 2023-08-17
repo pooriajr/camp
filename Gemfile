@@ -68,6 +68,7 @@ group :development do
   gem 'capistrano', require: false
   gem 'capistrano-rails', require: false
   gem 'capistrano-rails-console', require: false
+  gem 'annotate'
 
   gem 'hotwire-livereload'
 end

@@ -8,11 +8,18 @@ module.exports = {
     './app/views/**/*.{erb,haml,html,slim}'
   ],
   theme: {
-    extend: {
-      fontFamily: {
-        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
-      },
+    fontFamily: {
+      sans: ['Rubik', '"Source Sans 3"', ...defaultTheme.fontFamily.sans],
     },
+    extend: {
+      colors: {
+        'accent': '#ffff02',
+        'accent-light': '#ffff80',
+      },
+      borderWidth: {
+        '3': '3px'
+      }
+    }
   },
   plugins: [
     require('@tailwindcss/forms'),

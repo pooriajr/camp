@@ -2,12 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
-
-@layer components {
-  .btn-primary {
-    @apply py-2 px-4 bg-blue-200;
+@layer base {
+  input, input[type], select, textarea {
+    @apply border-3 border-black
+  }
+  .prose {
+    font-family: "Source Sans 3"
   }
 }
 
-*/
+@layer components {
+  .btn {
+    @apply inline-block py-2 px-4 border transition pressable cursor-pointer text-black;
+  }
+  .btn-primary {
+    @apply btn bg-accent pressable cursor-pointer hard-shadow;
+  }
+  .btn-secondary {
+    @apply btn bg-white pressable cursor-pointer hard-shadow;
+  }
+  .btn-disabled {
+    @apply btn !border-neutral-400 !text-neutral-400 !cursor-not-allowed;
+  }
+  .dark-emoji {
+    @apply grayscale contrast-200 brightness-75
+  }
+  .darker-emoji {
+    @apply grayscale contrast-[300%] brightness-[66%]
+  }
+}
+
+@layer utilities {
+  .border {
+    @apply border-3 border-black;
+  }
+  .hard-shadow {
+    box-shadow: 4px 4px 0px #000000;
+  }
+
+  .pressable:hover {
+    @apply hover:-translate-x-[1px] hover:-translate-y-[1px]; 
+    box-shadow: 5px 5px 0px #000000;
+  }
+
+  .pressable:active {
+    @apply hover:translate-x-[2px] hover:translate-y-[2px]; 
+    box-shadow: 2px 2px 0px #000000;
+  }
+
+  .linky {
+    @apply text-sky-700 underline;
+  }
+}

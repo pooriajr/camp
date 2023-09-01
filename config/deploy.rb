@@ -2,7 +2,7 @@
 lock "~> 3.17.1"
 
 set :application, "camp"
-set :url, "camp.com"
+set :url, "camp.kianpak.com"
 set :repo_url, "git@github.com:pooriar/camp.git"
 
 set :application_port, 3005

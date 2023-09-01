@@ -1,13 +1,29 @@
-- name: Pooria
-  aka: Kian
-  project: WannaPair
-  project description: The best place to find a pair programmer
-  stats:
-    - '120 cold emails sent'
+- name: Adam
+  project: 
 
 - name: Carlos
   aka: Carl OS
   project: CallScripts
   project description: A place to store your call scripts
+  project status: 'in progress'
   stats:
     - '420 quickscopes'
+
+- name: Chris
+
+- name: Corey
+
+- name: Jonathan
+
+- name: Paul
+
+- name: Pooria
+  aka: Kian
+  project: WannaPair
+  x handle: '@kian_pak'
+  project description: The best place to find a pair programmer
+  stats:
+    - '120 cold emails sent'
+
+- name: Tomer
+

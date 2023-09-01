@@ -1,8 +1,8 @@
 - name: Adam
   project: 
   stats:
-    - 2 gallons of ice tea consumed
-    - 163 serious questions asked
+    - 2.3 gallons of ice tea consumed
+    - $425 won in poker
 
 - name: Carlos
   aka: Carl OS
@@ -11,6 +11,7 @@
   project status: 'in progress'
   stats:
     - 420 quickscopes
+    - 43 sales anecdotes told
 
 - name: Chris
   stats:
@@ -19,8 +20,8 @@
 
 - name: Corey
   stats:
-    - 14 hours spent filming vlogs
-    - 28 hours spent editing vlogs
+    - 13 hours spent filming vlogs
+    - 29 hours spent editing said vlogs
 
 - name: Jonathan
   stats:
@@ -28,7 +29,7 @@
 
 - name: Paul
   stats:
-    - 16 mud waters created
+    - 21 meals skipped
     - 9 shirts gifted
 
 - name: Pooria
@@ -37,7 +38,6 @@
   x handle: '@kian_pak'
   project description: The best place to find a pair programmer
   stats:
-    - 1 centimeter too close to the scope
     - 634 photos taken
 
 - name: Tomer

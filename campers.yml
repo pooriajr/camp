@@ -10,15 +10,26 @@
   project description: A place to store your call scripts
   project status: 'in progress'
   stats:
-    - '420 quickscopes'
+    - 420 quickscopes
 
 - name: Chris
+  stats:
+    - 1 fishing pole broken
+    - 2 ears saved from hearing damage
 
 - name: Corey
+  stats:
+    - 14 hours spent filming vlogs
+    - 28 hours spent editing vlogs
 
 - name: Jonathan
+  stats:
+    - 1 half-day taken
 
 - name: Paul
+  stats:
+    - 16 mud waters created
+    - 9 shirts gifted
 
 - name: Pooria
   aka: Kian
@@ -26,7 +37,10 @@
   x handle: '@kian_pak'
   project description: The best place to find a pair programmer
   stats:
-    - '120 cold emails sent'
+    - 1 centimeter too close to the scope
+    - 634 photos taken
 
 - name: Tomer
+  stats:
+    - 98 kosher sausages consumed
 

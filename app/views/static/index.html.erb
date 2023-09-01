@@ -5,11 +5,11 @@
     <% @campers.each do |camper| %>
       <div class="w-[220px]">
 
-        <div class="relative border aspect-[1/1] bg-cover flex items-end" style="background-image:url(<%= asset_path 'Adam.JPG' %>)">
+        <div class="relative border aspect-[1/1] bg-cover flex items-end" style="background-image:url(<%= asset_path "#{camper["name"]}.JPG" %>)">
           <div class="text-xl text-white font-bold bg-gradient-to-t px-2 py-1 from-black to-transparent w-full"><%= camper["name"] %><span class="font-medium text-base italic"><%= " aka #{camper['aka']}" if camper["aka"] %></span></div>
-          <div class="opacity-0 hover:opacity-100 bg-accent absolute w-full h-full bg-cover flex flex-col items-center justify-center" style="background-image:url(<%= asset_path 'Adam-alt.JPG' %>)">
+          <div class="opacity-0 hover:opacity-100 bg-accent absolute w-full h-full bg-cover flex flex-col items-center justify-end gap-3" style="background-image:url(<%= asset_path "#{camper["name"]}-alt.JPG" %>)">
             <% camper["stats"]&.each do |stat| %>
-              <p class="text-center <%= ['rotate-6', 'rotate-3', '-rotate-6', '-rotate-3', 'rotate-12', -'rotate-12'].sample %> mt-8 bg-white text-sm px-1"><%= stat %></p>
+              <p class="text-center <%= ['rotate-6', 'rotate-3', '-rotate-6', '-rotate-3', 'rotate-12', -'rotate-12'].sample %> mb-4 bg-white text-sm px-1"><%= stat %></p>
             <% end %>
           </div>
         </div>

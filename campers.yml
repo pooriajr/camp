@@ -1,0 +1,13 @@
+- name: Pooria
+  aka: Kian
+  project: WannaPair
+  project description: The best place to find a pair programmer
+  stats:
+    - '120 cold emails sent'
+
+- name: Carlos
+  aka: Carl OS
+  project: CallScripts
+  project description: A place to store your call scripts
+  stats:
+    - '420 quickscopes'

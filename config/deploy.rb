@@ -1,11 +1,11 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.17.1"
 
-set :application, "literail"
-set :url, "literail.com"
-set :repo_url, "git@github.com:pooriar/literail.git"
+set :application, "camp"
+set :url, "camp.com"
+set :repo_url, "git@github.com:pooriar/camp.git"
 
-set :application_port, 3000
+set :application_port, 3005
 
 set :branch, "main"
 

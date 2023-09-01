@@ -1,5 +1,8 @@
 - name: Adam
   project: 
+  stats:
+    - 2 gallons of ice tea consumed
+    - 163 serious questions asked
 
 - name: Carlos
   aka: Carl OS

@@ -1,33 +1,47 @@
 - name: Adam
-  project: 
+  project: ???
+  project description: Your fitness journey, supercharged by AI
+  project status: 'in progress'
   stats:
     - 2.3 gallons of ice tea consumed
     - $425 won in poker
 
 - name: Carlos
   aka: Carl OS
-  project: CallScripts
-  project description: A place to store your call scripts
+  project: ???
+  project description: AI generated scripts for cold calling
   project status: 'in progress'
   stats:
     - 420 quickscopes
     - 43 sales anecdotes told
 
 - name: Chris
+  project: Ailivion
+  project description: Full-Spectrum Goal Attainment
+  project status: 'in progress'
   stats:
     - 1 fishing pole broken
     - 2 ears saved from hearing damage
 
 - name: Corey
+  project: Work User Manual
+  project description: Create your own personal user manual
+  project status: 'in progress'
   stats:
     - 13 hours spent filming vlogs
     - 29 hours spent editing said vlogs
 
 - name: Jonathan
+  project: ???
+  project description: Get back into working out, even if you don't know what to do.
+  project status: 'in progress'
   stats:
     - 1 half-day taken
 
 - name: Paul
+  project: Maestro
+  project description: Bookmarks are where ideas go to die. Resurrect them in 2 clicks.
+  project status: 'in progress'
   stats:
     - 21 meals skipped
     - 9 shirts gifted
@@ -35,12 +49,15 @@
 - name: Pooria
   aka: Kian
   project: WannaPair
-  x handle: '@kian_pak'
-  project description: The best place to find a pair programmer
+  project description: Find a pair programmer on demand.
+  project status: 'in progress'
   stats:
     - 634 photos taken
 
 - name: Tomer
+  project: Next Hire AI
+  project description: Advaned AI analytics to find the best applicant for your job.
+  project status: 'in progress'
   stats:
     - 98 kosher sausages consumed
 

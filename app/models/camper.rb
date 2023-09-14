@@ -15,4 +15,5 @@
 #
 class Camper < ApplicationRecord
   serialize :stats, Array
+  has_many :reports, dependent: :destroy
 end

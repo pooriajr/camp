@@ -1,9 +1,9 @@
 <div id="<%= dom_id report %>" class="border p-1 px-2 pt-2">
   <%= report.body %>
   <div class="flex justify-between items-end">
+    <div class="text-sm text-gray-600 text-right"><%= time_ago_in_words report.created_at %> ago</div>
     <% if report.deletable? %>
       <%= button_to "Delete (you have #{report.minutes_left_to_delete} minutes left to delete)", camper_report_path(camper_id: @camper, id: report.id), class: "text-gray-500 hover:text-red-500 text-sm", method: :delete, data: {turbo_confirm: "Are you sure? Can't undo this."} %>
     <% end %>
-    <div class="text-sm text-gray-600 text-right"><%= time_ago_in_words report.created_at %> ago</div>
   </div>
 </div>

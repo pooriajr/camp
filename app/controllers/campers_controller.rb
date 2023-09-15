@@ -24,7 +24,7 @@ class CampersController < ApplicationController
   private
 
   def camper_params
-    params.require(:camper).permit(:name, :aka, :project, :project_description, :project_url)
+    params.require(:camper).permit(:name, :aka, :project, :project_description, :project_url, :project_status)
   end
 
   def set_camper

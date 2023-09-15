@@ -9,6 +9,8 @@
       <%= f.text_field :project_description, class: 'block w-full mb-1' %>
       <%= f.label :project_url, "Project URL"%>
       <%= f.text_field :project_url, placeholder:'myproject.com', class: 'block w-full mb-1' %>
+      <%= f.label :project_status, class: 'block' %>
+      <%= f.select :project_status, {"In Progress": "in progress", "Complete": "complete"}, class: 'block w-full mb-1' %>
       <div class="flex justify-between mt-3">
         <%= link_to "Cancel", camper_path(@camper), class: 'btn-secondary' %>
         <%= f.submit class: 'btn-primary' %>

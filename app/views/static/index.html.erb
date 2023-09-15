@@ -19,8 +19,8 @@
           </div>
 
           <div class="px-2 mt-2">
-            <div>Building <span class="font-bold"><%= camper["project"] %></span></div>
-            <div class="text-xs"><%= camper["project description"] %></div>
+            <div>Building <span class="font-bold"><%= camper.project %></span></div>
+            <div class="text-xs"><%= camper.project_description %></div>
             <%= render "campers/project_status_badge", status: camper.project_status %>
           </div>
         </div>

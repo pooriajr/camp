@@ -1,7 +1,7 @@
 <div class="my-6 flex justify-center items-center w-full min-h-screen">
 
-  <div class="flex flex-wrap justify-center items-start gap-8">
-    <div class="w-[360px]">
+  <div class="flex gap-8 w-full max-w-4xl">
+    <div class="w-full">
       <%= link_to "< Back", root_path, class: "btn-secondary mb-4" %>
       <div class="relative border aspect-[1/1] bg-cover flex items-end" style="background-image:url(<%= asset_path "#{@camper["name"]}.JPG" %>)">
         <div class="opacity-0 hover:opacity-100 bg-accent absolute w-full h-full bg-cover flex flex-col items-center justify-end gap-3" style="background-image:url(<%= asset_path "#{@camper["name"]}-alt.JPG" %>)">
@@ -23,12 +23,14 @@
         </div>
       <% end %>
     </div>
-    
-    <div class="max-w-lg mb-2">
-      <div class="flex justify-between items-end mb-2">
-        <h2 class="text-xl font-semibold">Latest reports:</h2>
-        <%= link_to "New report", new_camper_report_path(camper_id:@camper), class: "btn-primary mb-2" %>
-      </div>
+
+    <div class="w-full">
+      <%= turbo_frame_tag :new_report do %>
+        <div class="w-full flex justify-end">
+          <%= link_to "Add new report", new_camper_report_path(camper_id:@camper), class: "btn-primary mb-2" %>
+        </div>
+      <% end %>
+      <h2 class="mt-4 text-xl font-semibold">Latest reports:</h2>
       <div class="space-y-2 sm:max-h-[80vh] overflow-y-auto">
         <%= render @camper.reports.most_recent %>
         <div class="hidden only:block bg-gray-100 p-3">
@@ -36,7 +38,6 @@
           <%= @camper.name %> hasn't posted any progress reports yet...<br> Someone should ask him what he's up to.
         </div>
       </div>
-
     </div>
   </div>
 </div>

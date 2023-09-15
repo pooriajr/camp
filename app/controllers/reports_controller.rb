@@ -1,6 +1,6 @@
 class ReportsController < ApplicationController
   before_action :set_report, only: %i[ show edit update destroy ]
-  before_action :set_camper, only: %i[ new create ]
+  before_action :set_camper, only: %i[ new create destroy ]
 
   # GET /reports or /reports.json
   def index
@@ -53,7 +53,7 @@ class ReportsController < ApplicationController
     @report.destroy
 
     respond_to do |format|
-      format.html { redirect_to reports_url, notice: "Report was successfully destroyed." }
+      format.html { redirect_to camper_url(@camper), notice: "Report was successfully destroyed." }
       format.json { head :no_content }
     end
   end

@@ -1,7 +1,7 @@
 <%= form_with(model: [@camper, report], class: "contents") do |form| %>
   <% if report.errors.any? %>
-    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
-      <h2><%= pluralize(report.errors.count, "error") %> prohibited this report from being saved:</h2>
+    <div id="error_explanation" class="bg-red-100 text-red-700 px-3 py-2 font-medium mt-3">
+      <h2><%= pluralize(report.errors.count, "error") %> stopped this report from being saved:</h2>
 
       <ul>
         <% report.errors.each do |error| %>
@@ -12,11 +12,12 @@
   <% end %>
 
   <div class="my-5">
-    <%= form.label :body %>
-    <%= form.text_area :body, rows: 4, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.label :body, "Give us an update on your progress building the app" %>
+    <%= form.text_area :body, rows: 4, placeholder: 'I did some things...', class: "block shadow border px-3 py-2 mt-2 w-full" %>
   </div>
 
-  <div class="inline">
-    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+  <div class="flex justify-between">
+    <%= link_to 'Nevermind', @camper, class: "btn-secondary" %>
+    <%= form.submit class: "btn-primary", data: {turbo_frame: "_top"} %>
   </div>
 <% end %>

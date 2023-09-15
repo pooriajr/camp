@@ -1,6 +1,6 @@
 <div class="my-6 flex flex-col justify-center items-center w-full min-h-screen">
   <div class="text-3xl font-bold group">Cohort <span class="group-hover:line-through group-hover:opacity-50">#1</span><span class="absolute text-4xl -ml-4 rotate-12 invisible inline-block group-hover:visible animate-wiggle"> #2💩</span></div>
-  <div class="text-center mt-2">Camp ended <%= distance_of_time_in_words Date.current, Date.new(2023, 8, 27) %> ago... so have you been using what you learned?</div>
+  <div class="text-center mt-2">Camp ended <%= distance_of_time_in_words Date.current, Date.new(2023, 8, 27) %> ago... have you been using what you learned?</div>
 
   <div class="mt-5 grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
     <% @campers.each do |camper| %>
@@ -8,7 +8,7 @@
         <div class="w-[260px]">
 
           <div class="relative btn-secondary !p-0 aspect-[1/1] bg-cover flex items-end" style="background-image:url(<%= asset_path "#{camper["name"]}.JPG" %>)">
-            <div class="text-xl text-white font-bold bg-gradient-to-t px-2 py-1 from-black to-transparent w-full"><%= camper["name"] %><span class="font-medium text-base italic"><%= " aka #{camper['aka']}" if camper["aka"] %></span></div>
+            <div class="text-xl text-white font-bold bg-gradient-to-t px-2 py-1 from-black to-transparent w-full"><%= camper["name"] %><span class="font-medium text-base italic"><%= " aka #{camper['aka']}" if camper["aka"].present? %></span></div>
             <div class="opacity-0 hover:opacity-100 bg-accent absolute w-full h-full bg-cover flex flex-col items-center justify-end gap-3" style="background-image:url(<%= asset_path "#{camper["name"]}-alt.JPG" %>)">
               <% camper["stats"]&.each do |stat| %>
                 <div class="hover:opacity-10">

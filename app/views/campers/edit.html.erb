@@ -1,4 +1,18 @@
-<div>
-  <h1 class="font-bold text-4xl">Campers#edit</h1>
-  <p>Find me in app/views/campers/edit.html.erb</p>
+<div class="max-w-sm">
+  <%= turbo_frame_tag :edit_camper do %>
+    <%= form_with model: @camper, class: 'text-sm' do |f| %>
+      <%= f.label :aka, "Also known as"%>
+      <%= f.text_field :aka, class: 'block w-full mb-1' %>
+      <%= f.label :project, "Project title"%>
+      <%= f.text_field :project, class: 'block w-full mb-1' %>
+      <%= f.label :project_description%>
+      <%= f.text_field :project_description, class: 'block w-full mb-1' %>
+      <%= f.label :project_url, "Project URL"%>
+      <%= f.text_field :project_url, placeholder:'myproject.com', class: 'block w-full mb-1' %>
+      <div class="flex justify-between mt-3">
+        <%= link_to "Cancel", camper_path(@camper), class: 'btn-secondary' %>
+        <%= f.submit class: 'btn-primary' %>
+      </div>
+    <% end %>
+  <% end %>
 </div>

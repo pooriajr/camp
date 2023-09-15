@@ -16,7 +16,7 @@
       <%= link_to "Edit", edit_camper_path(@camper), class: 'float-right' %>
       <h1 class="font-bold text-4xl"><%= @camper.name %><span class="font-medium text-lg italic"><%= " aka #{@camper['aka']}" if @camper["aka"].present? %></span></h1>
       <h2 class="mt-4 uppercase text-xs">Working on: </h2>
-      <p class="font-semibold text-2xl"><%= @camper.project %></p>
+      <p class="font-semibold text-2xl"><%= @camper.project %><%= link_to 'Link', @camper.project_url, class: 'ml-2 underline text-base font-medium' if @camper.project_url.present? %></p>
       <p class="text-lg"><%= @camper.project_description %></p>
       <%= render "project_status_badge", status: @camper.project_status %>
     <% end %>

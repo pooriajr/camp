@@ -1,6 +1,17 @@
 <div class="max-w-sm">
   <%= turbo_frame_tag :edit_camper do %>
     <%= form_with model: @camper, class: 'text-sm' do |f| %>
+      <% if @camper.errors.any? %>
+        <div id="error_explanation" class="bg-red-100 text-red-700 px-3 py-2 font-medium mt-3">
+          <h2><%= pluralize(@camper.errors.count, "error") %> stopped this camper from being saved:</h2>
+
+          <ul>
+            <% @camper.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
       <%= f.label :aka, "Also known as"%>
       <%= f.text_field :aka, class: 'block w-full mb-1' %>
       <%= f.label :project, "Project title"%>
@@ -8,7 +19,7 @@
       <%= f.label :project_description%>
       <%= f.text_field :project_description, class: 'block w-full mb-1' %>
       <%= f.label :project_url, "Project URL"%>
-      <%= f.text_field :project_url, placeholder:'myproject.com', class: 'block w-full mb-1' %>
+      <%= f.text_field :project_url, placeholder:'https://myproject.com', class: 'block w-full mb-1' %>
       <%= f.label :project_status, class: 'block' %>
       <%= f.select :project_status, {"In Progress": "in progress", "Complete": "complete"}, class: 'block w-full mb-1' %>
       <div class="flex justify-between mt-3">

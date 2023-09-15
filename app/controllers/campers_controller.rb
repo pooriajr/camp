@@ -8,7 +8,6 @@ class CampersController < ApplicationController
   end
 
   def update
-    @camper.aka = nil if @camper.aka == ""
     respond_to do |format|
       if @camper.update(camper_params)
         format.html { redirect_to camper_url(@camper), notice: "Camper was successfully updated." }

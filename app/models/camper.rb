@@ -16,4 +16,5 @@
 class Camper < ApplicationRecord
   serialize :stats, Array
   has_many :reports, dependent: :destroy
+  validates :project_url, format: { with: /\Ahttps?:\/\/.*\z/, message: "must start with http:// or https://" }, allow_blank: true
 end

@@ -2,7 +2,34 @@
   <div class="text-3xl font-bold group">Cohort <span class="group-hover:line-through group-hover:opacity-50">#1</span><span class="absolute text-4xl -ml-4 rotate-12 invisible inline-block group-hover:visible animate-wiggle"> #2💩</span></div>
   <div class="text-center mt-2">Camp ended <%= distance_of_time_in_words Date.current, Date.new(2023, 8, 27) %> ago... have you been using what you learned?</div>
 
-  <div class="mt-5 grid gap-5 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
+  <div class="flex gap-4">
+    <div class="border p-3 mt-3">
+      <div class="text-sm uppercase font-semibold text-gray-700">Most Reports</div>
+      <% @campers.most_reports.each_with_index do |camper, index| %>
+        <% if camper.reports.any? and index == 0 %>
+          <div class="text-lg font-semibold">#<%= index + 1 %>. <%= camper.name %> (<%= camper.reports.count %> total)</div>
+        <% elsif camper.reports.any? %>
+          <div>#<%= index + 1 %>. <%= camper.name %> (<%= camper.reports.count %> total)</div>
+        <% else %>
+          <div class="text-gray-400"><%= camper.name %> hasn't reported yet.</div>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="border p-3 mt-3">
+      <div class="text-sm uppercase font-semibold text-gray-700">Latest Report</div>
+      <% @campers.most_recent_report.each_with_index do |camper, index| %>
+        <% if camper.reports.any? and index == 0 %>
+          <div class="text-lg font-semibold">#<%= index + 1 %>. <%= camper.name %> (last report <%= time_ago_in_words(camper.reports.last.created_at) %> ago)</div>
+        <% elsif camper.reports.any? %>
+          <div>#<%= index + 1 %>. <%= camper.name %> (last report <%= time_ago_in_words(camper.reports.last.created_at) %> ago)</div>
+        <% else %>
+          <div class="text-gray-400"><%= camper.name %> hasn't reported yet.</div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="mt-5 grid gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
     <% @campers.each do |camper| %>
       <%= link_to camper do %>
         <div class="md:w-[260px]">
@@ -12,7 +39,7 @@
             <div class="opacity-0 hover:opacity-100 bg-accent absolute w-full h-full bg-cover flex flex-col items-center justify-end gap-3" style="background-image:url(<%= asset_path "#{camper["name"]}-alt.JPG" %>)">
               <% camper["stats"]&.each do |stat| %>
                 <div class="hover:opacity-10">
-                  <p class="text-center <%= ['rotate-6', 'rotate-3', '-rotate-6', '-rotate-3', 'rotate-12', -'rotate-12'].sample %> mb-3 whitespace-nowrap hard-shadow bg-white text-sm px-1"><%= stat %></p>
+                  <p class="text-center <%= big_rotate %> mb-3 whitespace-nowrap hard-shadow bg-white text-sm px-1"><%= stat %></p>
                 </div>
               <% end %>
             </div>
@@ -22,6 +49,13 @@
             <div>Building <span class="font-bold"><%= camper.project %></span></div>
             <div class="text-xs"><%= camper.project_description %></div>
             <%= render "campers/project_status_badge", status: camper.project_status %>
+            <% if camper.reports.any? %>
+              <div class="mt-4">
+                <div class="text-xs font-semibold uppercase text-gray-800">Latest status report:</div>
+                <div class="text-sm text-gray-700"><%= camper.reports.last.body.truncate(140) %></div>
+                <div class="text-right text-xs text-gray-700">- <%= time_ago_in_words camper.reports.last.created_at %> ago</div>
+              </div>
+            <% end %>
           </div>
         </div>
       <% end %>

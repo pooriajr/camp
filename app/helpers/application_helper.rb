@@ -44,4 +44,12 @@ module ApplicationHelper
     distance_of_time_in_words(t1, t2)
   end
 
+  def big_rotate
+    ['rotate-6', 'rotate-3', '-rotate-6', '-rotate-3', 'rotate-12', -'rotate-12'].sample
+  end
+
+  def slight_rotate
+    ['rotate-1', 'rotate-2', '-rotate-1', '-rotate-2'].sample
+  end
+
 end

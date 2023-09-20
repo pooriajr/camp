@@ -11,7 +11,7 @@
         <% elsif camper.reports.any? %>
           <div>#<%= index + 1 %>. <%= camper.name %> (<%= camper.reports.count %> total)</div>
         <% else %>
-          <div class="text-gray-400"><%= camper.name %> hasn't reported yet.</div>
+          <div class="text-gray-400 text-xs"><%= camper.name %> hasn't reported yet.</div>
         <% end %>
       <% end %>
     </div>
@@ -23,7 +23,7 @@
         <% elsif camper.reports.any? %>
           <div>#<%= index + 1 %>. <%= camper.name %> (last report <%= time_ago_in_words(camper.reports.last.created_at) %> ago)</div>
         <% else %>
-          <div class="text-gray-400"><%= camper.name %> hasn't reported yet.</div>
+          <div class="text-gray-400 text-xs"><%= camper.name %> hasn't reported yet.</div>
         <% end %>
       <% end %>
     </div>

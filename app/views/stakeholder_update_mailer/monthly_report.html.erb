@@ -1,4 +1,4 @@
-<h2>Stakeholder Update for Sep 30 (<%= @days_since_end_of_camp %> since end of Camp)</h2>
+<h2>Stakeholder Update for Sep 30 (<%= distance_of_time_in_words Date.current, Date.new(2023, 8, 27) %> since end of Camp)</h2>
 <% Camper.complete.each do |camper| %>
   <p><%= link_to camper.name, camper %>'s app is done! 🎉 <%= link_to "Check it out here.", camper.project_url if camper.project_url.present? %>
 <% end %>

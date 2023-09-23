@@ -21,4 +21,8 @@ class Camper < ApplicationRecord
   # order by who has the most reports, tiebreak on who has the most recent report
   scope :most_reports, -> { left_joins(:reports).group(:id).order('COUNT(reports.id) DESC') }
   scope :most_recent_report, -> { left_joins(:reports).group(:id).order('MAX(reports.created_at) DESC') }
+  scope :with_reports_in_last_month, -> { joins(:reports).where('reports.created_at > ?', 31.days.ago) }
+  scope :without_reports_in_last_month, -> { where.not(id: with_reports_in_last_month) }
+  scope :complete, -> { where(project_status: 'complete') }
+  scope :in_progress, -> { where(project_status: 'in progress') }
 end

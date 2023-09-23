@@ -1,0 +1,17 @@
+<h2>Stakeholder Update for Sep 30 (<%= @days_since_end_of_camp %> since end of Camp)</h2>
+<% Camper.complete.each do |camper| %>
+  <p><%= link_to camper.name, camper %>'s app is done! 🎉 <%= link_to "Check it out here.", camper.project_url if camper.project_url.present? %>
+<% end %>
+
+<% Camper.in_progress.with_reports_in_last_month.most_reports.each do |camper| %>
+  <p><%= link_to camper.name, camper %> reported progress:</p>
+  <ul>
+    <% camper.reports.in_last_month.each do |report| %>
+      <li><%= report.body.truncate(200) %><small> - <%= time_ago_in_words report.created_at %> ago</small></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<% Camper.in_progress.without_reports_in_last_month.each do |camper| %>
+  <p><%= link_to camper.name, camper %> didn't report anything. Still working on it?
+<% end %>
